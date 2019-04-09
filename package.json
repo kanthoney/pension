@@ -1,0 +1,36 @@
+{
+  "name": "@kanthoney/pension",
+  "version": "0.0.1",
+  "description": "Pension calculator",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "keywords": [
+    "pension",
+    "calculator"
+  ],
+  "author": "Kevin Anthoney",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babelify": "^10.0.0",
+    "grunt": "^1.0.4",
+    "grunt-browserify": "^5.3.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-less": "^2.0.0",
+    "grunt-contrib-pug": "^2.0.0",
+    "grunt-env": "^0.4.4",
+    "grunt-terser": "^0.1.0"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.86.0"
+  }
+}
