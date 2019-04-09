@@ -46,7 +46,9 @@ module.exports = function(grunt)
       dev: {
         options: {
           transform: [ 'babelify' ],
-          debug: true
+          browserifyOptions: {
+            debug: true
+          }
         },
         files: [
           { src: 'ui/index.js', dest: 'build/app.js' }
