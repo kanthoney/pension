@@ -66,8 +66,10 @@ class ResultCard extends React.Component
               income = pot / years;
               adjusted_income = adjusted_pot / years;
             } else {
-              income = pot * Math.pow(growth, years)*(growth - increase)/(Math.pow(growth, years) - Math.pow(increase, years));
-              adjusted_income = adjusted_pot * Math.pow(growth, years)*(growth - increase)/(Math.pow(growth, years) - Math.pow(increase, years));
+              income = pot * Math.pow(growth, years)*
+                (growth - increase)/(Math.pow(growth, years) - Math.pow(increase, years));
+              adjusted_income = adjusted_pot * Math.pow(growth, years)*
+                (growth - increase)/(Math.pow(growth, years) - Math.pow(increase, years));
             }
             return (<Table.Row key={`income-${years}`}>
                     <Table.Cell>{years} Years</Table.Cell>
