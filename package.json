@@ -12,6 +12,11 @@
   ],
   "author": "Kevin Anthoney",
   "license": "ISC",
+  "repository":
+  {
+    "type": "git",
+    "url": "git@github.com:kanthoney/pension.git"
+  },
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
