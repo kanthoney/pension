@@ -1,6 +1,6 @@
 'use strict';
 
-import { SET_PENSION } from '../actionTypes';
+import { SET_PENSION, SET_PENSION_ERRORS } from '../actionTypes';
 
 const initialState = {
   pot: '',
@@ -9,7 +9,8 @@ const initialState = {
   expected_growth: '',
   expected_inflation: '',
   current_age: '',
-  retirement_age: ''
+  retirement_age: '',
+  errors: {}
 };
 
 export default function(state = initialState, action)
@@ -17,10 +18,22 @@ export default function(state = initialState, action)
   switch(action.type) {
   case SET_PENSION:
     const { name, value } = action.payload;
+    let errors = { ...state.errors };
+    delete errors[name];
     return {
       ...state,
-      [name]: value
+      [name]: value,
+      errors
     }
+
+  case SET_PENSION_ERRORS: {
+    const { errors } = action.payload;
+    return {
+      ...state,
+      errors
+    };
+  }
+
   default:
     return state;
   }

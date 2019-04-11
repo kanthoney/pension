@@ -3,11 +3,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Form, Input, Icon, Popup } from 'semantic-ui-react';
+import { connect }from 'react-redux';
 
-export default class NumberInput extends React.Component
+class NumberInput extends React.Component
 {
+  validate = this.props.decimal?/^\d*(?:\.\d*)?$/:/^\d*$/;
+
   onChange = e => {
-    if(this.props.onChange instanceof Function) {
+    if(this.props.onChange instanceof Function && this.validate.test(e.target.value)) {
       this.props.onChange(e.target.name, e.target.value);
     }
   }
@@ -15,10 +18,11 @@ export default class NumberInput extends React.Component
   render()
   {
     return (
-        <Form.Field>
+        <Form.Field error={this.props.error || !this.validate.test(this.props.value)}>
         <label>
-        {this.props.label} {this.props.help?<Popup trigger={<Icon size="small" name="info" />} content={this.props.help} />:''}
-</label>
+        {this.props.label}
+      {this.props.help?<Popup trigger={<Icon size="small" name="info" />} content={this.props.help} />:''}
+      </label>
         <Input
       type="number"
       name={this.props.name}
@@ -28,3 +32,11 @@ export default class NumberInput extends React.Component
     );
   }
 };
+
+export default connect(
+  (state, ownProps) => ({
+    value: state[ownProps.path][ownProps.name],
+    error: state[ownProps.path].errors[ownProps.name]
+  })
+)(NumberInput);
+
