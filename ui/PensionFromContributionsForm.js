@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import { Form, Button } from 'semantic-ui-react';
 import NumberInput from './NumberInput';
 import { connect } from 'react-redux';
-import { setPension, setPensionErrors, calculate } from './redux/actions';
+import { setPension, setPensionErrors, calculatePot } from './redux/actions';
 
 class PensionFromContributionsForm extends React.Component
 {
@@ -37,7 +37,7 @@ class PensionFromContributionsForm extends React.Component
     if(Object.keys(errors).length > 0) {
       this.props.setPensionErrors(errors);
     } else {
-      this.props.calculate(value);
+      this.props.calculatePot(value);
     }
   }
 
@@ -112,6 +112,6 @@ export default connect(
   state => {
     return { value: { ...state.pension } }
   },
-  { onChange: setPension, setPensionErrors, calculate }
+  { onChange: setPension, setPensionErrors, calculatePot }
 )(PensionFromContributionsForm);
 

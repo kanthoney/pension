@@ -1,6 +1,6 @@
 'use strict';
 
-import { SET_PENSION, SET_PENSION_ERRORS, CALCULATE } from './actionTypes';
+import { SET_PENSION, SET_PENSION_ERRORS, CALCULATE_POT, UPDATE_POT } from './actionTypes';
 
 export const setPension = (name, value) => ({
   type: SET_PENSION,
@@ -17,9 +17,18 @@ export const setPensionErrors = errors => ({
   }
 });
 
-export const calculate = (data) => ({
-  type: CALCULATE,
+export const calculatePot = (data) => ({
+  type: CALCULATE_POT,
   payload: {
     data
   }
 });
+
+export const updatePot = (name, value) => ({
+  type: UPDATE_POT,
+  payload: {
+    name,
+    value
+  }
+});
+

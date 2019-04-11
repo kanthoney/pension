@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import { Header } from 'semantic-ui-react';
 import PensionFromContributionsForm from './PensionFromContributionsForm';
+import ResultCard from './ResultCard';
 
 export default class App extends React.Component
 {
@@ -20,6 +21,7 @@ export default class App extends React.Component
         <Provider store={store}>
         <Header>Pension Calculator</Header>
         <PensionFromContributionsForm />
+        <ResultCard />
         </Provider>
     );
   }

@@ -2,7 +2,7 @@
 
 import { combineReducers } from 'redux';
 import pension from './pension';
-import calculate from './calculate';
+import pot from './pot';
 
-export default combineReducers({ pension, calculate });
+export default combineReducers({ pension, pot });
 
