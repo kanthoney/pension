@@ -43,7 +43,7 @@ class ResultCard extends React.Component
 
       </Form>
         <p>The table below indicates how much annual income you can draw from your pension pot, and for how long,
-      given the growth rate and annual increase entered above.</p>
+      given the growth rate and annual increase entered above. This calculation does not include any state pension.</p>
 
         <Table celled>
         <Table.Header>
