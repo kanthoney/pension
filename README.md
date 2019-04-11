@@ -20,6 +20,6 @@ To run:
 node index
 ```
 
-If the environment variable NODE_PORT is defined, this will open an HTTP server on the port, otherwise the port 3000
+If the environment variable `NODE_PORT` is defined, this will open an HTTP server on the port, otherwise the port 3000
 will be used.
 
