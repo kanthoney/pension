@@ -27,6 +27,9 @@ class NumberInput extends React.Component
       type="number"
       name={this.props.name}
       value={this.props.value}
+      min={this.props.min}
+      max={this.props.max}
+      step={this.props.step}
       onChange={this.onChange} />
         </Form.Field>
     );

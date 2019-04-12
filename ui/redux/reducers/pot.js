@@ -3,6 +3,7 @@
 import { CALCULATE_POT, UPDATE_POT } from '../actionTypes';
 
 const initialState = {
+  lump_sum: "25",
   errors: {}
 };
 
